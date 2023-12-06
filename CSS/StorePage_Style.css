@@ -1,0 +1,66 @@
+/*GRID Layout of Page*/
+.webPage_grid{
+    margin: 0;
+    font-family: monospace;
+
+    display: grid;
+    grid-template-columns: 9fr 1fr;
+    grid-template-rows: 20% 70% 10%;
+
+    grid-template-areas:
+        'header_grid' 'basket_grid'
+        'main_grid' 'main_grid'
+        'footer_grid' 'footer_grid';
+
+    width: 100vw;
+    height: 100vh;
+}
+
+.main_grid{
+    grid-column: 1/-1;
+
+}
+
+.footer_grid{
+    grid-column: 1/-1;
+
+}
+
+/*Header*/
+.header_grid{
+    background-color: #211498;
+    display: grid;
+    align-content: center;
+}
+
+.header_title_1, .header_title_2{
+    color: #F06C4D;
+
+    margin-left: 40px;
+}
+
+.header_title_1{
+    font-size: 40px;
+}
+
+.header_title_2{
+    font-size: 22px;
+}
+
+/*Main area*/
+.main_grid{
+    background-color: #F5B666;
+}
+
+/*Footer area*/
+
+.footer_grid{
+    background-color: #711DA2;
+    color: #C62591;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer_grid a{
+    color: #C62591;
+}
