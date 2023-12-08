@@ -29,3 +29,13 @@ function Set_SweetData($data){
 
     $conn->close();
 }
+
+function Get_SweetData_ID($ID){
+    $conn = include ("DB_connector.php");
+    $sql = "SELECT * FROM `indiaSweet_sweetTB` WHERE sweetID = $ID";
+    $result  = $conn->query($sql);
+    $row = $result->fetch_array(MYSQLI_NUM);
+    $conn->close();
+
+    return $row;
+}
