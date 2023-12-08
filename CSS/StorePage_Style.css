@@ -50,8 +50,67 @@
 /*Main area*/
 .main_grid{
     background-color: #F5B666;
+    display: grid;
+    align-content: center;
 }
 
+.main_grid_inner{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+}
+
+.main_child{
+    text-align: center;
+
+    background-color: #D9438E;
+    border-radius: 10px;
+
+    width: 50%;
+    height: 110%;
+}
+.main_child div:not(.main_child_name){
+    margin: 5px;
+    font-size: 14px;
+
+}
+
+.main_child img{
+    margin-top: 20px ;
+    width: 200px;
+    height: 200px;
+}
+
+.main_child_name{
+    font-weight: bold;
+    font-size: 22px;
+    margin: 5px;
+}
+
+.main_child_allergy .title, .main_child_ingred .title{
+    font-style: normal;
+    font-weight: bold;
+}
+.main_child_allergy{
+    font-style: italic;
+    font-weight: bold;
+}
+.main_child button{
+    font-size: 16px;
+    width: 40%;
+    height: 40px;
+    color: black;
+    font-weight: bold;
+    border-color: #F06C4D;
+    border-style: solid;
+    background-color: #EB8807;
+
+}
+
+.main_child button:hover{
+    background-color: #F06C4D;
+
+}
 /*Footer area*/
 
 .footer_grid{
