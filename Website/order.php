@@ -6,16 +6,18 @@ $sweetID = $_POST["sweetID"]; //get sweet ID
 $orderDetails = Get_SweetData_ID($sweetID); //get sweet details
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="">
+    <link rel="stylesheet" type="text/css" href="../CSS/orderPage_Style.css">
     <script type="text/javascript" src=""></script>
     <meta charset="UTF-8">
     <title>Order Page</title>
 </head>
 
 <body class="webPage_grid">
+
 <!--header-->
 <div class="header_grid">
     <div class="header_title_1"> Indian Fudge</div> <div class="header_title_2">By Egan</div>
@@ -26,11 +28,16 @@ $orderDetails = Get_SweetData_ID($sweetID); //get sweet details
     Your Order
 </div>
 
+<div class="empty_grid">
+</div>
+
+
 <!--Main AREA-->
 <div class="main_grid">
-    <div class="main_grid_inner_1">
+
 <!--        Order Form-->
     <form name="order_form" method="post" action="">
+        <div class="main_grid_inner_1">
 <!--        Personal Details-->
         <div class="main_child_1">
             <div class="main_child_header"> Personal Details</div>
@@ -52,21 +59,32 @@ $orderDetails = Get_SweetData_ID($sweetID); //get sweet details
             <div class="main_child_TC"> Agree to the <a class="main_child_TC_link" onclick="">Terms & Conditions</a>:<input type="checkbox" name="TC" id="TC"></div>
             <button type="submit" onclick="return errorChecking()"> Buy</button>
         </div>
+        </div>
     </form>
 
-    </div>
+
 
 <!--    Their Order-->
     <div class="main_grid_inner_2">
         <div class="main_child_header"> Your Order:</div>
+
+        <div class="main_child_box">
         <?php
         echo '<div class="main_child2"><img alt="No Image Available" src="data:image/jpeg;base64,'.base64_encode($orderDetails[5]).'"/> </div>';
         echo '<div class="main_child2"> <p class="main_child2_title">'.$orderDetails[1].'</p> <p>'.$orderDetails[2].'</p> </div>'
 
             ?>
+        </div>
     </div>
 
+    <footer>
+        A Project by Egan Da Silva <br/>
+        Contact: <a href="mailto:egandasilva@gmail.com">egandasilva@gmail.com</a>
+    </footer>
 </div>
 
+
 </body>
+
+
 </html>

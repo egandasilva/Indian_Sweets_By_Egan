@@ -63,8 +63,7 @@
 .main_child{
     text-align: center;
 
-    background-color: #D9438E;
-    border-radius: 10px;
+
 
     width: 50%;
     height: 110%;
@@ -113,13 +112,17 @@
 }
 /*Footer area*/
 
-.footer_grid{
+/*Footer*/
+footer{
     background-color: #711DA2;
     color: #C62591;
     padding: 20px;
     text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
 }
 
-.footer_grid a{
+footer a{
     color: #C62591;
 }

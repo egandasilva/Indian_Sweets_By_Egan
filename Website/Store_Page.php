@@ -44,12 +44,13 @@ $sweetsData = Get_SweetData();
         }
     echo '</div>';
     ?>
+    <footer>
+        A Project by Egan Da Silva <br/>
+        Contact: <a href="mailto:egandasilva@gmail.com">egandasilva@gmail.com</a>
+    </footer>
 </div>
 
 <!--footer-->
-<div class="footer_grid">
-    A Project by Egan Da Silva <br/>
-    Contact: <a href="mailto:egandasilva@gmail.com">egandasilva@gmail.com</a>
-</div>
+
 </body>
 </html>
