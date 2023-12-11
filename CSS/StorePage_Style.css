@@ -2,15 +2,15 @@
 .webPage_grid{
     margin: 0;
     font-family: monospace;
+    background-color: #F5B666;
 
     display: grid;
     grid-template-columns: 9fr 1fr;
-    grid-template-rows: 20% 70% 10%;
+    grid-template-rows: 20% 80%;
 
     grid-template-areas:
         'header_grid' 'basket_grid'
-        'main_grid' 'main_grid'
-        'footer_grid' 'footer_grid';
+        'main_grid' 'main_grid';
 
     width: 100vw;
     height: 100vh;
@@ -27,7 +27,7 @@
 }
 
 /*Header*/
-.header_grid{
+.header_grid, .basket_grid{
     background-color: #211498;
     display: grid;
     align-content: center;
@@ -49,7 +49,6 @@
 
 /*Main area*/
 .main_grid{
-    background-color: #F5B666;
     display: grid;
     align-content: center;
 }
@@ -125,4 +124,57 @@ footer{
 
 footer a{
     color: #C62591;
+}
+
+
+@media only screen and (max-width: 1000px) {
+    .webPage_grid{
+        grid-template-columns: 7fr 3fr;
+        grid-template-rows: 10% 90%;
+        grid-template-areas:
+        'header_grid' 'basket_grid'
+        'main_grid' 'main_grid';
+
+        width: 100vw;
+        height: 100vh;
+    }
+    .header_title_1{
+        font-size: 60px;
+    }
+
+    .header_title_2{
+        font-size: 33px;
+    }
+
+    .main_grid_inner{
+        grid-template-columns: 1fr;
+        height: 115%;
+    }
+
+    .main_child{
+        width: 100%;
+    }
+
+    .main_child img{
+        width: 400px;
+        height: 400px;
+    }
+    .main_child div:not(.main_child_name){
+        font-size: 31px;
+
+    }
+
+    .main_child_name{
+        font-size: 44px;
+    }
+
+    .main_child button{
+        font-size: 32px;
+        width: 40%;
+        height: 80px;
+    }
+
+    footer{
+        font-size: 31px;
+    }
 }

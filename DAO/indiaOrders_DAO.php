@@ -22,16 +22,25 @@ function Get_OrdersData(){
 
 function Set_OrdersData($data){
     $conn = include ("DB_connector.php");
-    $sql = "INSERT INTO `indiaSweet_ordersTB` (customerID, orderDate, orderStatus) VALUES (?,?,?)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i,s,s", $data[0],$data[1],$data[2]);
-
-    if(!($stmt->execute())){
-        echo "failed to add to database";
+    $sql = "INSERT INTO `indiaSweet_ordersTB` (`customerID`, `orderDate`, `orderStatus`) VALUES ('$data[0]', '$data[1]','$data[2]')";
+    if($conn->query($sql) === TRUE){
     }
-    $stmt->close();
+    else{
+        echo "ERROR! Could not process Order";
+    }
 
     $conn->close();
 }
 
+function Get_OrderID($data){
+    $conn = include ("DB_connector.php");
+    $sql = "SELECT `orderID` FROM `indiaSweet_ordersTB` WHERE `customerID` = '$data[0]'";
+    $result = $conn->query($sql);
+
+    $rows = mysqli_fetch_all($result, MYSQLI_BOTH);
+
+    $conn->close();
+    return $rows[0]["orderID"];
+
+}
 

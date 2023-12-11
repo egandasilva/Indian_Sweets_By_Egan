@@ -21,14 +21,14 @@ function Get_OrderedItems()
 function Set_OrderedItems($data)
 {
     $conn = include ("DB_connector.php");
-    $sql = "INSERT INTO `indiaSweet_orderedItemsTB` (orderID, sweetID) VALUES (?,?)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i,i", $data[0], $data[1]);
+    $sql = "INSERT INTO `indiaSweet_orderedItemsTB` (`orderID`, `sweetID`) VALUES ('$data[0]','$data[1]')";
 
-    if (!($stmt->execute())) {
-        echo "failed to add to database";
+
+    if($conn->query($sql) === TRUE){
     }
-    $stmt->close();
+    else{
+        echo "ERROR! Could not process Order";
+    }
 
     $conn->close();
 }
