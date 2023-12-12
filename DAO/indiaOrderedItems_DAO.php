@@ -1,10 +1,10 @@
 <?php
 
 // get sweet data from sweet table
-function Get_OrderedItems()
+function Get_OrderedItems($ID)
 {
     $conn = include ("DB_connector.php");
-    $sql = "SELECT * FROM `indiaSweet_orderedItemsTB`";
+    $sql = "SELECT * FROM `indiaSweet_orderedItemsTB`  WHERE `orderID` = '$ID'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {

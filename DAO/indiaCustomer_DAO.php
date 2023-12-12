@@ -47,3 +47,14 @@ function Get_CustomerID($data){
     return $rows[$size-1]["customerID"];
 
 }
+
+function Get_CustomerData_ID($ID){
+    $conn = include ("DB_connector.php");
+    $sql = "SELECT * FROM `indiaSweet_customerTB` WHERE `customerID` = '$ID'";
+    $result  = $conn->query($sql);
+    $row = $result->fetch_array(MYSQLI_BOTH);
+    $conn->close();
+
+    return $row;
+
+}

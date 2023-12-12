@@ -18,12 +18,15 @@ function Get_SweetData(){
 function Set_SweetData($data){
     $conn = include ("DB_connector.php");
 
-    $sql = "INSERT INTO `indiaSweet_sweetTB` (name, description, ingredients, allergies, image) VALUES (?,?,?,?,?)";
+    $sql = "INSERT INTO indiaSweet_sweetTB (name, description, ingredients, allergies, image) VALUES (?,?,?,?,?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sssss", $data[0],$data[1],$data[2],$data[3]);
+    $stmt->bind_param("sssss", $data[0],$data[1],$data[2],$data[3],$data[4]);
 
     if(!($stmt->execute())){
         echo "failed to add to database";
+    }
+    else{
+        echo "add sweet to database";
     }
     $stmt->close();
 
@@ -34,7 +37,7 @@ function Get_SweetData_ID($ID){
     $conn = include ("DB_connector.php");
     $sql = "SELECT * FROM `indiaSweet_sweetTB` WHERE sweetID = $ID";
     $result  = $conn->query($sql);
-    $row = $result->fetch_array(MYSQLI_NUM);
+    $row = $result->fetch_array(MYSQLI_BOTH);
     $conn->close();
 
     return $row;

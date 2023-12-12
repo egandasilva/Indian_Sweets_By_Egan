@@ -37,7 +37,7 @@ $orderID = Insert_order($customerID);
 Insert_orderedItems($orderID, $sweetID);
 
 //send email
-//send_email($orderID, $customer_data);
+send_email($orderID, $customer_data);
 
 ?>
 

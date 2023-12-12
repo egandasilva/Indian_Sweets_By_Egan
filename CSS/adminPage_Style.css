@@ -1,0 +1,103 @@
+.webPage_grid{
+    margin: 0;
+    font-family: monospace;
+    background-color: #F5B666;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 20% 80% ;
+
+    grid-template-areas:
+        'header_grid' 'title_grid' 'empty_grid'
+        'nav_grid' 'nav_grid' 'nav_grid';
+
+    width: 100vw;
+    height: 100vh;
+}
+
+/*Header*/
+.header_grid, .title_grid, .empty_grid{
+    background-color: #211498;
+    display: grid;
+    align-content: center;
+}
+
+.header_title_1, .header_title_2{
+    color: #F06C4D;
+
+    margin-left: 40px;
+}
+
+.header_title_1, .title_grid{
+    font-size: 40px;
+    color: #F06C4D;
+
+}
+
+.title_grid{
+    text-align: center;
+}
+
+.main_grid_password{
+    margin: 10px;
+}
+
+.main_header_1{
+    font-size: 22px;
+}
+.main_header_2{
+    font-size: 18px;
+    color: darkred;
+    font-weight: bold;
+}
+
+.main_grid_password input{
+    font-size: 18px;
+}
+
+.main_grid_password button{
+    margin-top: 10px;
+    font-size: 16px;
+    width: 20%;
+    height: 40px;
+    color: black;
+    font-weight: bold;
+    border-color: #F06C4D;
+    border-style: solid;
+    background-color: #EB8807;
+
+}
+
+.main_grid_password button:hover{
+    background-color: #F06C4D;
+
+}
+
+.nav_grid{
+    grid-column: 1/-1;
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    background-color: #211498;
+    border-top-style:solid;
+    border-top-color: #F06C4D;
+    height: 5%;
+}
+
+.nav_child{
+    font-size: 22px;
+
+}
+
+.nav_child a{
+    text-decoration: none;
+    color: #F06C4D;
+}
+
+
+.nav_child:hover{
+    background-color: #F06C4D;
+    color: #211498;
+}

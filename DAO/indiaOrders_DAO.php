@@ -3,21 +3,14 @@
 
 
 // get sweet data from sweet table
-function Get_OrdersData(){
+function Get_OrderData($ID){
     $conn = include ("DB_connector.php");
-    $sql  = "SELECT * FROM `indiaSweet_ordersTB`";
+    $sql  = "SELECT * FROM `indiaSweet_ordersTB` WHERE `customerID` = '$ID'";
     $result  = $conn->query($sql);
-
-    if($result->num_rows >0) {
-        //create shopping page
-        $rows = mysqli_fetch_all($result, MYSQLI_BOTH);
-        return $rows;
-    }
-    else{
-        echo "Empty Orders Table";
-    }
-
+    $row = $result->fetch_array(MYSQLI_BOTH);
     $conn->close();
+
+    return $row;
 }
 
 function Set_OrdersData($data){
@@ -41,6 +34,30 @@ function Get_OrderID($data){
 
     $conn->close();
     return $rows[0]["orderID"];
+
+}
+
+function Get_orderDate($ID){
+    $conn = include ("DB_connector.php");
+    $sql = "SELECT `orderDate` FROM `indiaSweet_ordersTB` WHERE `customerID` = '$ID'";
+    $result = $conn->query($sql);
+
+    $rows = mysqli_fetch_all($result, MYSQLI_BOTH);
+
+    $conn->close();
+    return $rows[0]["orderDate"];
+
+}
+
+function Get_orderStatus($ID){
+    $conn = include ("DB_connector.php");
+    $sql = "SELECT `orderStatus` FROM `indiaSweet_ordersTB` WHERE `customerID` = '$ID'";
+    $result = $conn->query($sql);
+
+    $rows = mysqli_fetch_all($result, MYSQLI_BOTH);
+
+    $conn->close();
+    return $rows[0]["orderStatus"];
 
 }
 
